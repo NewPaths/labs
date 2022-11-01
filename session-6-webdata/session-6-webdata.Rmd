@@ -75,7 +75,7 @@ library(stringr)
 You'll learn more about `rvest` in next week's session. For now, just remember that parsing a website in R is straightforward:
 
 ```{r}
-parsed_doc <- read_html("http://www.r-datacollection.com/materials/ch-4-xpath/fortunes/fortunes.html") 
+parsed_doc <- read_html("http://www.r-datacollection.com/materials/ch-4-xpath/fortunes/fortunes.html") #parse the website 
 ```
 
 
@@ -130,6 +130,10 @@ Next to numeric predicates, there are also **textual predicates**. Textual predi
 
 ```{r}
 html_elements(parsed_doc, xpath = "//h1[contains(., 'Rolf')] | //h1[contains(., 'Robert')]" )
+
+html_elements(parsed_doc, xpath = "//a[@href]")
+
+
 ```
 
 ## Xpath exercise `r emo::ji('pick')``
